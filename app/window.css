@@ -1,0 +1,27 @@
+* {
+    margin:0;
+    padding:0;
+    border: 0 none;
+}
+html, body, #window {
+    width: 100%;
+    height: 100%;
+}
+header {
+    height: 22pt;
+    background-color: lightgrey;
+    font-size: 12pt;
+}
+input {
+    margin: 4px;
+    border: 1px solid darkgrey;
+    width: calc(100% - 12px);
+}
+#view-container {
+    width: 100%;
+    height: calc(100% - 22pt);
+}
+webview {
+    width: 100%;
+    height: 100%;
+}
