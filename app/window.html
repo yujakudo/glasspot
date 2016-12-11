@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline';" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
     <title>glasspot</title>
     <link rel="stylesheet" href="window.css">
     <script src="window.js" charset="utf-8"></script>
 </head>
 <body>
 <div id="window">
-    <header>
-        <input id="urlin" type="text" onkeypress="KeyPressed(event.keyCode);"/>
-    </header>
+    <iframe id="header-frame" sandbox="allow-same-origin" ></iframe>    
     <div id="view-container">
-        <webview id="view" src=""></webview>
+        <webview id="view" src="" ></webview>
     </div>
 </div>
 </body>

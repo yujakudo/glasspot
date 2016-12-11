@@ -1,3 +1,5 @@
+'use strict';
+
 const Electron = require('electron');
 const App = Electron.app;
 const BrowserWindow = Electron.BrowserWindow;
@@ -11,22 +13,22 @@ function CreateWindow () {
     });
     MainWin.setMenu(null);
     MainWin.loadURL( 'file://' + __dirname + '/window.html');
-    //  MainWin.webContents.openDevTools();
+    MainWin.webContents.openDevTools();
 
-    MainWin.on('closed', function() {
+    MainWin.on('closed', ()=> {
         MainWin = null;
     });
 }
 
 App.on('ready', CreateWindow);
 
-App.on('window-all-closed', function() {
+App.on('window-all-closed', ()=> {
     if (process.platform !== 'darwin') {
         App.quit();
     }
 });
 
-App.on('activate', function() {
+App.on('activate', ()=> {
     if (MainWin === null) {
         CreateWindow();
     }
