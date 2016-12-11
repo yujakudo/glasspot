@@ -13,7 +13,7 @@ function CreateWindow () {
     });
     MainWin.setMenu(null);
     MainWin.loadURL( 'file://' + __dirname + '/window.html');
-    MainWin.webContents.openDevTools();
+//    MainWin.webContents.openDevTools();
 
     MainWin.on('closed', ()=> {
         MainWin = null;

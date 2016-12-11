@@ -10,7 +10,6 @@ html, body, #window {
 #header-frame {
     width: 100%;
     height: 22pt;
-    display: block;
 }
 #header {
     width: 100%;
