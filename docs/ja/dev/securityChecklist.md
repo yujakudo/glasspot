@@ -9,16 +9,17 @@
 
 ##実装
 * *.html: 'Content-Security-Policy'を記述する。
-* windows.html: DOM操作を行う場所はwebviewでサンドボックス化する。
+* *.html: DOM操作を行う場所はwebviewでサンドボックス化する。
 * *.js: evalを無効にする。
 * *.js: リモート・テキストのエスケープを確実にする。
-* preload.js,header.js: Bufferを無効にする。
 * BrowserWindowsとwebviewにはセキュアでないオプションは追加しない。
     * allowDisplayingInsecureContent, allowRunningInsecureContentをtrueにしない。
     * experimentalFeatures, experimentalCanvasFeatures, 
     blinkFeaturesを有効にしない。(熟知していないので)
-* webviewタグでは、nodeintegration, 
-disablewebsecurity, allowpopups, insertCSS, executeJavaScriptを追加しない。
+* webviewタグでは、
+    * preloadするjsにてeval,Bufferを無効にする。
+    * オプションにnodeintegration, disablewebsecurity, allowpopupsを追加しない。
+    * リモートのソースでinsertCSS, executeJavaScriptをしない。
 * 仕様に記したプロトコルのみ許可することを、確実にする。
 
 ##このチェック・リスト
