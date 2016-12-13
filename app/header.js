@@ -1,9 +1,8 @@
 'use strict';
 //  Disable eval and Buffer.
-window.eval = global.eval = function() {
-    throw new Error("Can't use eval().");
+window.eval = global.eval = global.Buffer = function() {
+    throw new Error("Can't use eval and Buffer.");
 }
-delete global.Buffer;
 
 const Electron = require('electron')
 const IpcRenderer = Electron.ipcRenderer;

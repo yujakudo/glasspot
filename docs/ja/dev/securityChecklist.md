@@ -8,11 +8,11 @@
 * FILEプロトコルは、ユーザーが操作した時と、そのファイルが参照するリンクのみ有効。
 
 ##実装
+* *.html: 'Content-Security-Policy'を記述する。
 * windows.html: DOM操作を行う場所はwebviewでサンドボックス化する。
-* windows.html: 'Content-Security-Policy'を記述する。
-* window.js: eval() を無効にする。
-* window.js: リモート・テキストのエスケープを確実にする。
-* preload.js,header.js: eval()とBufferを無効にする。
+* *.js: evalを無効にする。
+* *.js: リモート・テキストのエスケープを確実にする。
+* preload.js,header.js: Bufferを無効にする。
 * BrowserWindowsとwebviewにはセキュアでないオプションは追加しない。
     * allowDisplayingInsecureContent, allowRunningInsecureContentをtrueにしない。
     * experimentalFeatures, experimentalCanvasFeatures, 
